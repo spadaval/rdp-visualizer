@@ -1,0 +1,26 @@
+{
+  "name": "rdp-visualizer",
+  "version": "0.0.1",
+  "description": "Basic Recusive Descent Parser visualizer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hybrideagle/rdp-visualizer.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hybrideagle/rdp-visualizer/issues"
+  },
+  "homepage": "https://github.com/hybrideagle/rdp-visualizer#readme",
+  "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "cytoscape": "^3.2.8",
+    "cytoscape-dagre": "^2.2.0",
+    "lodash": "^4.17.4",
+    "tree-model": "^1.0.6"
+  }
+}
