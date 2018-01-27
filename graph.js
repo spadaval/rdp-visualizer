@@ -19,7 +19,7 @@ var cy = window.cy = cytoscape({
         'text-valign': 'center',
         'text-halign': 'center',
         'background-color': _.memoize((ele) => {
-          if(ele.data('type') === 'terminal') {
+          if(ele.data('terminal')) {
             return 'blue';
           }
           else {
@@ -43,8 +43,8 @@ var cy = window.cy = cytoscape({
 
   elements: {
     nodes: [
-      { data: { id: 'S-1', symbol: 'S' , type: 'nt', level: 0 } },
-      { data: { id: 'a-1', symbol: 'a' , type: 'terminal', level : 1 } },
+      { data: { id: 'S-1', symbol: 'S' , terminal: false, level: 0 } },
+      { data: { id: 'a-1', symbol: 'a' , terminal: true, level : 1 } },
     ],
     edges: [
       {data: {id:"sa",source:'S-1',target:'a-1'} },
@@ -55,7 +55,3 @@ var cy = window.cy = cytoscape({
 cy.layout({name:"dagre"}).run();
 
 export default cy;
-
-export let solve = (elem) => {
-
-};

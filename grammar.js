@@ -11,6 +11,6 @@
   ], ...
 }*/
 
-export default grammar = {
+export var grammar = {
   "S": ["aS","aa"]
 };

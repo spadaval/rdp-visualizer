@@ -18,9 +18,14 @@
   "homepage": "https://github.com/hybrideagle/rdp-visualizer#readme",
   "dependencies": {
     "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "cytoscape": "^3.2.8",
     "cytoscape-dagre": "^2.2.0",
+    "eslint": "^4.16.0",
+    "eslint-plugin-html": "^4.0.2",
     "lodash": "^4.17.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "tree-model": "^1.0.6"
   }
 }
