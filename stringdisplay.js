@@ -12,6 +12,6 @@ export default class StringDisplay extends React.Component {
         <span className="complete">{string.slice(0,pos)}</span>
         <span className="current">{string[pos]}</span>
         <span className="normal">{string.slice(pos+1)}</span>
-      </div>)
+      </div>);
   }
 }

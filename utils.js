@@ -9,7 +9,8 @@ export var newId = function(symbol){
   return symbol + '-' + window.btoa(Math.floor(Math.random()*100000).toString());
 };
 
-export var addName = (elem, symbol) => {
+export var addName = async (elem, symbol) => {
+  console.log(`Emitting name ${symbol}`);
   let child = elem.cy.add({
     id:newId(symbol),
     terminal: false,
@@ -22,7 +23,8 @@ export var addName = (elem, symbol) => {
   return child;
 };
 //TODO make this more functional, and not just copypasta
-export var addTerminal = (elem, symbol) => {
+export var addTerminal = async (elem, symbol) => {
+  console.log(`Emitting terminal ${symbol}`);
   let child = elem.cy.add({
     id:newId(symbol),
     terminal: true,
@@ -34,3 +36,4 @@ export var addTerminal = (elem, symbol) => {
   });
   return child;
 };
+export const wait = async (ms) => new Promise(resolve => setTimeout(resolve, ms));

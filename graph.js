@@ -44,10 +44,8 @@ var cy = window.cy = cytoscape({
   elements: {
     nodes: [
       { data: { id: 'S-1', symbol: 'S' , terminal: false, level: 0 } },
-      { data: { id: 'a-1', symbol: 'a' , terminal: true, level : 1 } },
     ],
     edges: [
-      {data: {id:"sa",source:'S-1',target:'a-1'} },
     ]
   },
 });
