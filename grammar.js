@@ -12,5 +12,5 @@
 }*/
 
 export var grammar = {
-  "S": ["aS","aa"]
+  "S": ["aSa","aa"]
 };

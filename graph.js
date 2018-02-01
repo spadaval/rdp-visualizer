@@ -18,14 +18,14 @@ var cy = window.cy = cytoscape({
         'text-opacity': 0.5,
         'text-valign': 'center',
         'text-halign': 'center',
-        'background-color': _.memoize((ele) => {
+        'background-color': (ele) => {
           if(ele.data('terminal')) {
             return 'blue';
           }
           else {
             return 'red';
           }
-        }),
+        },
       }
     },
 
@@ -43,7 +43,7 @@ var cy = window.cy = cytoscape({
 
   elements: {
     nodes: [
-      { data: { id: 'S-1', symbol: 'S' , terminal: false, level: 0 } },
+      { data: { id: 'root', symbol: 'S' , terminal: false, level: 0 } },
     ],
     edges: [
     ]
