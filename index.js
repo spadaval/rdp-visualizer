@@ -10,11 +10,9 @@ import StringDisplay from './stringdisplay.js';
 let root = cy.nodes('#root');
 let string = "aaaa";
 let curr_pos = 0;
-
 const relayout = () => cy.layout({name:'dagre'}).run();
 const rerender = () => {
   curr_pos = cy.nodes().filter((e)=>e.data('terminal')==true).length;
-
   render(<StringDisplay string={string} pos={curr_pos}/>, document.getElementById('string'));
 };
 
@@ -64,11 +62,10 @@ var addTerminal = async (elem, symbol) => {
 //Emit a non-terminal, shift the shown string
 //throws BadTerminalError
 export var emit = async (terminal) => {
-  if (string[curr_pos + 1] != terminal){
+  if (string[curr_pos] != terminal){
     console.log("badTerminalError");
     throw new Error("badTerminalError");
   }
-  curr_pos++;
   rerender();
 };
 
@@ -77,7 +74,7 @@ export var emit = async (terminal) => {
 var clearChildren = async (elem) => {
   await wait();
   console.log(`Clearing ${elem.data('symbol')}-${elem.data('level')}`);
-  elem.style('background-color','grey');
+  elem.style('background-color','pink');
   elem.successors().style("background-color","pink");
   relayout();
   rerender();
@@ -116,7 +113,7 @@ var expand = async (elem, grammar) => {
       };
       return;
     } catch (e) { //handle the pattern not matching
-      clearChildren(elem);
+      await clearChildren(elem);
 
       //await wait();
       console.log(`Redo ${elem.data("symbol")}-(${elem.data("level")})`);
