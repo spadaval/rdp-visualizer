@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build index.html -d docs --public-url "
+    "start": "parcel ./index.html -d docs --public-url=/rdp-visualizer/",
+    "build": "parcel build ./index.html -d docs --public-url=/rdp-visualizer/"
   },
   "repository": {
     "type": "git",

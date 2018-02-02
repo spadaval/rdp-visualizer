@@ -2,13 +2,13 @@
 import 'babel-polyfill';
 import React from 'react';
 import {render} from 'react-dom';
-import cy from './graph.js';
+import cy,{buildGraph} from './graph.js';
 //import {newId, addTerminal, addName, wait} from './utils.js';
 import {grammar} from './grammar.js';
 import StringDisplay from './stringdisplay.js';
 
 let root = cy.nodes('#root');
-let string = "aaaaaa";
+let string = "aaaaaaaa";
 let curr_pos = 0;
 const relayout = () => cy.layout({name:'dagre'}).run();
 const rerender = () => {
@@ -132,6 +132,18 @@ var expand = async (elem, grammar) => {
 };
 //addName(root, "S");
 //addTerminal(root, "a");
-relayout();
-rerender();
-expand(root, grammar, 0).then(e=>console.log("Total Success"),e=>console.log("Total Failure"));
+const run = async (s_string) => {
+  string = s_string;
+  cy.nodes().remove();
+  cy.add({ data: { id: "root", symbol: "S", terminal: false, level: 0 } });
+  relayout();
+  rerender();
+  await expand(root, grammar, 0).then(e=>console.log("Total Success"),e=>console.log("Total Failure"));
+};
+
+window.onload = function(){
+    document.getElementById("run").onclick = () => {
+      document.getElementById("run").disabled = true;
+      run(document.getElementById("input_text").value).then(()=>document.getElementById("run").disabled = false);
+    };
+};

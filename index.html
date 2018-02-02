@@ -4,22 +4,16 @@
   <head>
     <title>RDP Visualizer</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-    <link href="style.css" rel="stylesheet" />
-
-
-    <!-- for testing with local version of cytoscape.js -->
-    <!--<script src="../cytoscape.js/build/cytoscape.js"></script>-->
-
-    <script src="https://cdn.rawgit.com/cpettitt/dagre/v0.7.4/dist/dagre.min.js"></script>
-    <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-dagre/1.5.0/cytoscape-dagre.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+    <link href="./style.css" rel="stylesheet">
   </head>
   <body>
     <h1>RDP Visualizer</h1>
     <div id="string"></div>
     <div id="cy"></div>
+    <div id="input">
+      <input type="text" id="input_text" value="aaaa">
+      <input type="button" id="run" value="run">
     <!-- Load appplication code at the end to ensure DOM is loaded -->
-    <script src="index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

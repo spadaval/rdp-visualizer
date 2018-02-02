@@ -4,11 +4,12 @@ body {
 }
 
 #cy {
-  width: 100%;
-  height: 90%;
+  width: 50%;
+  height: 85%;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 25%;
+  bottom: 5%;
+  margin: 0 auto;
   z-index: 998;
 }
 #string {
@@ -17,8 +18,11 @@ body {
   margin: 0 auto;
   top: 0;
   z-index: 999;
+  text-align: center;
 }
-
+.string-container {
+  margin:0 auto;
+}
 
 h1 {
   opacity: 0.5;
