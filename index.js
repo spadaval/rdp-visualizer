@@ -8,7 +8,7 @@ import {grammar} from './grammar.js';
 import StringDisplay from './stringdisplay.js';
 
 let root = cy.nodes('#root');
-let string = "aaaa";
+let string = "aaaaaa";
 let curr_pos = 0;
 const relayout = () => cy.layout({name:'dagre'}).run();
 const rerender = () => {
@@ -16,7 +16,7 @@ const rerender = () => {
   render(<StringDisplay string={string} pos={curr_pos}/>, document.getElementById('string'));
 };
 
-const wait = async () => new Promise(resolve => setTimeout(resolve, 1000));
+const wait = async () => new Promise(resolve => setTimeout(resolve, 500));
 
 var addName = async (elem, symbol) => {
   await wait();
